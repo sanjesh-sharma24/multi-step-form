@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="colorlib.com">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Phone Survey</title>
+
+<!-- Font Icon -->
+<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/nouislider.min.css">
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+<!-- date-picker -->
+<link rel="stylesheet" href="css/datepicker.min.css">
+<link rel="stylesheet" href="css/radios-to-slider.css">
+<link rel="stylesheet" href="css/dropzone.css">
+
+
+</head>
+
+<body>
+
+<div class="main">
+    <div class="container">
+        <form method="POST" id="signup-form" class="signup-form" action="#">
+            <div>
+                <h3>Start Survey</h3>
+                <fieldset>
+                    <div class="fieldset-content">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-label">Survey Short Name</label>
+                                    <input type="text" class="form-control" name="sname" id="sname" />
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="description" class="form-label">Survey Description</label>
+                                    <div class="form-holder">
+                                    <textarea id="description" class="form-control" placeholder=""></textarea>
+                                    </div>
+                                    <!--<input type="text" name="email" id="description" />-->
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Number of Question:</label>
+                                    <div class="qty-buttons">
+                                        <input type="button" value="+" class="qtyplus" name="quantity">
+                                        <input type="text" name="quantity" value="" class="qty form-control required" placeholder="0">
+                                        <input type="button" value="-" class="qtyminus" name="quantity">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey Start Date:</label>
+                                    <input type="text" class="form-control datepicker-here" data-language='en' data-date-format="yyyy - mm - dd" id="dp1">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey End Date:</label>
+                                    <input type="text" class="form-control datepicker-here" data-language='en' data-date-format="yyyy - mm - dd" id="dp2">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey Created:</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control datepicker-here" data-language='en' data-date-format="yyyy - mm - dd" id="dp3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey Response Goal:</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control datepicker-here" data-language='en' data-date-format="yyyy - mm - dd" id="dp4">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey Start Time:</label>
+                                    <div class="form-holder">
+                                        <input id="input-a" value="" placeholder="HH:MM" data-default="20:48">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey End Time:</label>
+                                    <div class="form-holder">
+                                        <input id="input-x" value="" placeholder="HH:MM" data-default="20:48">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="trunk_id">Trunk:</label>
+                                    <div class="form-group">
+                                        <select name="" id="trunk_id" class="form-control">
+                                            <option value="10" class="option">Trunk 1</option>
+                                            <option value="20" class="option">Trunk 2</option>
+                                            <option value="30" class="option">Trunk 3</option>
+                                            <option value="40" class="option">Trunk 4</option>
+                                            <option value="50" class="option">Trunk 5</option>
+                                            <option value="60" class="option">Trunk 6</option>
+                                            <option value="70" class="option">Trunk 7</option>
+                                            <option value="80" class="option">Trunk 8</option>
+                                            <option value="90" class="option">Trunk 9</option>
+                                            <option value="100" class="option">Trunk 10</option>
+                                        </select>
+                                        <i class="zmdi zmdi-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Use Survey Skip Logic:</label>
+                                    <label for="switch1">
+                                        <input type="checkbox" id="switch1" checked switch="none" />
+                                        <span class="c-switch-label" data-on-label="Yes" data-off-label="No"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Enable AMD?:</label>
+                                    <label for="switch2">
+                                        <input type="checkbox" id="switch2" checked switch="none" />
+                                        <span class="c-switch-label" data-on-label="No" data-off-label="Yes"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="" >Timeout: <span id="timeoutLable">30 Sec (5 Rings)</span></label>
+                                    <div id="radios" class="timeout">
+                                        <input id="option1" name="options" value="30" type="radio">
+                                        <label for="option1">30</label>
+
+                                        <input id="option2" name="options" value="35" type="radio" checked>
+                                        <label for="option2">35</label>
+
+                                        <input id="option3" name="options" value="40" type="radio">
+                                        <label for="option3">40</label>
+
+                                        <input id="option4" name="options" value="45" type="radio">
+                                        <label for="option4">45</label>
+
+                                        <input id="option5" name="options" value="50" type="radio">
+                                        <label for="option5">50</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Channels</label>
+                                    <div class="slider channels"></div>
+                                    <!--<div class="slider2"></div>-->
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Audio Volume 25%</label>
+                                    <div id="radios3">
+                                        <input id="option1" name="options" type="radio">
+                                        <label for="option1">1</label>
+
+                                        <input id="option2" name="options" type="radio" checked>
+                                        <label for="option2">10</label>
+
+                                        <input id="option3" name="options" type="radio">
+                                        <label for="option3">20</label>
+
+                                        <input id="option4" name="options" type="radio">
+                                        <label for="option4">30</label>
+
+                                        <input id="option5" name="options" type="radio">
+                                        <label for="option5">40</label>
+
+                                        <input id="option6" name="options" type="radio">
+                                        <label for="option6">50</label>
+
+                                        <input id="option7" name="options" type="radio">
+                                        <label for="option7">60</label>
+
+                                        <input id="option8" name="options" type="radio">
+                                        <label for="option8">70</label>
+
+                                        <input id="option9" name="options" type="radio">
+                                        <label for="option9">80</label>
+
+                                        <input id="option10" name="options" type="radio">
+                                        <label for="option10">90</label>
+
+                                        <input id="option11" name="options" type="radio">
+                                        <label for="option11">100</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Basic Details</h3>
+                <fieldset>
+                    <div class="fieldset-content">
+                        <div class="row">
+                            <div class="com-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey ID:</label>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" disabled placeholder="BET02664PKJ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Response Tracking Question:</label>
+                                    <div class="form-group">
+                                        <select name="" id="tracking-question" class="form-control">
+                                            <option value="united states" class="option">Question 1</option>
+                                            <option value="united kingdom" class="option">Question 2</option>
+                                            <option value="viet nam" class="option">Question 3</option>
+                                        </select>
+                                        <i class="zmdi zmdi-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Intro Audio File:</label>
+                                    <div class="form-group">
+                                        <select name="" id="audio" class="form-control">
+                                            <option value="Audio" class="option">Audio 1</option>
+                                            <option value="Audio" class="option">Audio 2</option>
+                                            <option value="Audio" class="option">Audio 3</option>
+                                        </select>
+                                        <i class="zmdi zmdi-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com-md-12 col-xs-12">
+                                <div class="form-group" style="margin-bottom: 3.4vh">
+                                    <label for="">Hangup Audio File:</label>
+                                    <div class="dropzone" id="mydropzone"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Question 1</h3>
+                <fieldset>
+                    <div class="fieldset-content">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey ID:</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" disabled placeholder="BET02664PKJ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question Audio File:
+                                    </label>
+                                    <div class="form-holder">
+                                        <select name="" id="audio" class="form-control">
+                                            <option value="Audio" class="option">Audio 1</option>
+                                            <option value="Audio" class="option">Audio 2</option>
+                                            <option value="Audio" class="option">Audio 3</option>
+                                        </select>
+                                        <i class="zmdi zmdi-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question (Prompt):
+                                    </label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age is under/over 30">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group" style="margin-bottom: 38px">
+                                    <label for="">Question Label (eg."3-1"):</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <ul class="keypad">
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad1" type="checkbox" name="" value="1" checked  class="">
+                                                    <label for="keypad1">
+                                                        <div class="text-number">
+                                                            <strong>1</strong>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p>Under 30</p>
+                                                        </div>
+                                                        <div class="form-holder2">
+                                                            <select name="" id="question" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad2" type="checkbox" name="" value="2" checked  class="">
+                                                    <label for="keypad2">
+                                                        <strong>2</strong>
+                                                        <div class="text2">
+                                                            <p>30 and over</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad3" type="checkbox" name="" value="3" checked  class="">
+                                                    <label for="keypad3">
+                                                        <strong>3</strong>
+                                                        <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad4" type="checkbox" name="" value="4"  class="">
+                                                    <label for="keypad4"><strong>4</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad5" type="checkbox" name="" value="5"  class="">
+                                                    <label for="keypad5"><strong>5</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad6" type="checkbox" name="" value="6"  class="">
+                                                    <label for="keypad6"><strong>6</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad7" type="checkbox" name="" value="7"  class="">
+                                                    <label for="keypad7"><strong>1</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad8" type="checkbox" name="" value="8"  class="">
+                                                    <label for="keypad8"><strong>8</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad9" type="checkbox" name="" value="9"  class="">
+                                                    <label for="keypad9"><strong>9</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="keypad0" type="checkbox" name="" value="0"  class="">
+                                                    <label for="keypad0"><strong>0</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="keypad11" type="checkbox" name="" value="11"  class="">
+                                                    <label for="keypad11"><strong>*</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="keypad12" type="checkbox" name="" value="12"  class="">
+                                                    <label for="keypad12"><strong>#</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Question 2</h3>
+                <fieldset>
+                    <div class="fieldset-content">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey ID:</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" disabled placeholder="BET02664PKJ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question Audio File:
+                                    </label>
+                                    <div class="form-holder">
+                                        <select name="" id="audio" class="form-control">
+                                            <option value="Audio" class="option">Audio 1</option>
+                                            <option value="Audio" class="option">Audio 2</option>
+                                            <option value="Audio" class="option">Audio 3</option>
+                                        </select>
+                                        <i class="zmdi zmdi-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question (Prompt):
+                                    </label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age is under/over 30">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group" style="margin-bottom: 38px">
+                                    <label for="">Question Label (eg."3-1"):</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <ul class="keypad">
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="step1" type="checkbox" name="" value="1"  class="">
+                                                    <label for="step1">
+                                                        <p>Under 30</p>
+                                                        <div class="form-holder2">
+                                                            <select name="" id="question" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="step2" type="checkbox" name="" value="2"  class="">
+                                                    <label for="step2">
+                                                        <strong>2</strong>
+                                                        <p>30 and over</p>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="step3" type="checkbox" name="" value="3"  class="">
+                                                    <label for="step3">
+                                                        <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="step4" type="checkbox" name="" value="4"  class="">
+                                                    <label for="step4"><strong>4</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="step5" type="checkbox" name="" value="5"  class="">
+                                                    <label for="step5"><strong>5</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="step6" type="checkbox" name="" value="6"  class="">
+                                                    <label for="step6"><strong>6</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="step7" type="checkbox" name="" value="7"  class="">
+                                                    <label for="step7"><strong>1</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="step8" type="checkbox" name="" value="8"  class="">
+                                                    <label for="step8"><strong>8</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="step9" type="checkbox" name="" value="9"  class="">
+                                                    <label for="step9"><strong>9</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="step0" type="checkbox" name="" value="0"  class="">
+                                                    <label for="step0"><strong>0</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="step11" type="checkbox" name="" value="11"  class="">
+                                                    <label for="step11"><strong>*</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="step12" type="checkbox" name="" value="12"  class="">
+                                                    <label for="step12"><strong>#</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Question 3</h3>
+                <fieldset>
+                    <div class="fieldset-content">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey ID:</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" disabled placeholder="BET02664PKJ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question Audio File:
+                                    </label>
+                                    <div class="form-holder">
+                                        <select name="" id="audio" class="form-control">
+                                            <option value="Audio" class="option">Audio 1</option>
+                                            <option value="Audio" class="option">Audio 2</option>
+                                            <option value="Audio" class="option">Audio 3</option>
+                                        </select>
+                                        <i class="zmdi zmdi-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question (Prompt):
+                                    </label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age is under/over 30">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group" style="margin-bottom: 38px">
+                                    <label for="">Question Label (eg."3-1"):</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <ul class="keypad">
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="steps1" type="checkbox" name="" value="1"  class="">
+                                                    <label for="steps1">
+                                                        <p>Under 30</p>
+                                                        <div class="form-holder2">
+                                                            <select name="" id="question" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="steps2" type="checkbox" name="" value="2"  class="">
+                                                    <label for="steps2">
+                                                        <strong>2</strong>
+                                                        <p>30 and over</p>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="steps3" type="checkbox" name="" value="3"  class="">
+                                                    <label for="steps3">
+                                                        <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="steps4" type="checkbox" name="" value="4"  class="">
+                                                    <label for="steps4"><strong>4</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="steps5" type="checkbox" name="" value="5"  class="">
+                                                    <label for="steps5"><strong>5</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="steps6" type="checkbox" name="" value="6"  class="">
+                                                    <label for="steps6"><strong>6</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="steps7" type="checkbox" name="" value="7"  class="">
+                                                    <label for="steps7"><strong>1</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="steps8" type="checkbox" name="" value="8"  class="">
+                                                    <label for="steps8"><strong>8</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="steps9" type="checkbox" name="" value="9"  class="">
+                                                    <label for="steps9"><strong>9</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="steps0" type="checkbox" name="" value="0"  class="">
+                                                    <label for="steps0"><strong>0</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="steps11" type="checkbox" name="" value="11"  class="">
+                                                    <label for="steps11"><strong>*</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="steps12" type="checkbox" name="" value="12"  class="">
+                                                    <label for="steps12"><strong>#</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Question 4</h3>
+                <fieldset>
+                    <div class="fieldset-content">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey ID:</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" disabled placeholder="BET02664PKJ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question Audio File:
+                                    </label>
+                                    <div class="form-holder">
+                                        <select name="" id="audio" class="form-control">
+                                            <option value="Audio" class="option">Audio 1</option>
+                                            <option value="Audio" class="option">Audio 2</option>
+                                            <option value="Audio" class="option">Audio 3</option>
+                                        </select>
+                                        <i class="zmdi zmdi-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question (Prompt):
+                                    </label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age is under/over 30">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group" style="margin-bottom: 38px">
+                                    <label for="">Question Label (eg."3-1"):</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <ul class="keypad">
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key1" type="checkbox" name="" value="1"  class="">
+                                                    <label for="key1">
+                                                        <p>Under 30</p>
+                                                        <div class="form-holder2">
+                                                            <select name="" id="question" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key2" type="checkbox" name="" value="2"  class="">
+                                                    <label for="key2">
+                                                        <strong>2</strong>
+                                                        <p>30 and over</p>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key3" type="checkbox" name="" value="3"  class="">
+                                                    <label for="key3">
+                                                        <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key4" type="checkbox" name="" value="4"  class="">
+                                                    <label for="key4"><strong>4</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key5" type="checkbox" name="" value="5"  class="">
+                                                    <label for="key5"><strong>5</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key6" type="checkbox" name="" value="6"  class="">
+                                                    <label for="key6"><strong>6</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key7" type="checkbox" name="" value="7"  class="">
+                                                    <label for="key7"><strong>1</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key8" type="checkbox" name="" value="8"  class="">
+                                                    <label for="key8"><strong>8</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key9" type="checkbox" name="" value="9"  class="">
+                                                    <label for="key9"><strong>9</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="key0" type="checkbox" name="" value="0"  class="">
+                                                    <label for="key0"><strong>0</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="key11" type="checkbox" name="" value="11"  class="">
+                                                    <label for="key11"><strong>*</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="key12" type="checkbox" name="" value="12"  class="">
+                                                    <label for="key12"><strong>#</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Question 5</h3>
+                <fieldset>
+                    <div class="fieldset-content">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey ID:</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" disabled placeholder="BET02664PKJ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question Audio File:
+                                    </label>
+                                    <div class="form-holder">
+                                        <select name="" id="audio" class="form-control">
+                                            <option value="Audio" class="option">Audio 1</option>
+                                            <option value="Audio" class="option">Audio 2</option>
+                                            <option value="Audio" class="option">Audio 3</option>
+                                        </select>
+                                        <i class="zmdi zmdi-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question (Prompt):
+                                    </label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age is under/over 30">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group" style="margin-bottom: 38px">
+                                    <label for="">Question Label (eg."3-1"):</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <ul class="keypad">
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="pad1" type="checkbox" name="" value="1"  class="">
+                                                    <label for="pad1">
+                                                        <p>Under 30</p>
+                                                        <div class="form-holder2">
+                                                            <select name="" id="question" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="pad2" type="checkbox" name="" value="2"  class="">
+                                                    <label for="pad2">
+                                                        <strong>2</strong>
+                                                        <p>30 and over</p>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="pad3" type="checkbox" name="" value="3"  class="">
+                                                    <label for="pad3">
+                                                        <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="pad4" type="checkbox" name="" value="4"  class="">
+                                                    <label for="pad4"><strong>4</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="pad5" type="checkbox" name="" value="5"  class="">
+                                                    <label for="pad5"><strong>5</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="pad6" type="checkbox" name="" value="6"  class="">
+                                                    <label for="pad6"><strong>6</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="pad7" type="checkbox" name="" value="7"  class="">
+                                                    <label for="pad7"><strong>1</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="pad8" type="checkbox" name="" value="8"  class="">
+                                                    <label for="pad8"><strong>8</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="pad9" type="checkbox" name="" value="9"  class="">
+                                                    <label for="pad9"><strong>9</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="pad0" type="checkbox" name="" value="0"  class="">
+                                                    <label for="pad0"><strong>0</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="pad11" type="checkbox" name="" value="11"  class="">
+                                                    <label for="pad11"><strong>*</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="pad12" type="checkbox" name="" value="12"  class="">
+                                                    <label for="pad12"><strong>#</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Question 6</h3>
+                <fieldset>
+                    <div class="fieldset-content">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey ID:</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" disabled placeholder="BET02664PKJ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question Audio File:
+                                    </label>
+                                    <div class="form-holder">
+                                        <select name="" id="audio" class="form-control">
+                                            <option value="Audio" class="option">Audio 1</option>
+                                            <option value="Audio" class="option">Audio 2</option>
+                                            <option value="Audio" class="option">Audio 3</option>
+                                        </select>
+                                        <i class="zmdi zmdi-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question (Prompt):
+                                    </label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age is under/over 30">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group" style="margin-bottom: 38px">
+                                    <label for="">Question Label (eg."3-1"):</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <ul class="keypad">
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key-a" type="checkbox" name="" value="1"  class="">
+                                                    <label for="key-a">
+                                                        <p>Under 30</p>
+                                                        <div class="form-holder2">
+                                                            <select name="" id="question" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key-b" type="checkbox" name="" value="2"  class="">
+                                                    <label for="key-b">
+                                                        <strong>2</strong>
+                                                        <p>30 and over</p>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key-c" type="checkbox" name="" value="3"  class="">
+                                                    <label for="key-c">
+                                                        <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key-d" type="checkbox" name="" value="4"  class="">
+                                                    <label for="key-d"><strong>4</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key-e" type="checkbox" name="" value="5"  class="">
+                                                    <label for="key-e"><strong>5</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key-f" type="checkbox" name="" value="6"  class="">
+                                                    <label for="key-f"><strong>6</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key-g" type="checkbox" name="" value="7"  class="">
+                                                    <label for="key-g"><strong>1</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key-h" type="checkbox" name="" value="8"  class="">
+                                                    <label for="key-h"><strong>8</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="key-i" type="checkbox" name="" value="9"  class="">
+                                                    <label for="key-i"><strong>9</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="key-j" type="checkbox" name="" value="0"  class="">
+                                                    <label for="key-j"><strong>0</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="key-k" type="checkbox" name="" value="11"  class="">
+                                                    <label for="key-k"><strong>*</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="key-l" type="checkbox" name="" value="12"  class="">
+                                                    <label for="key-l"><strong>#</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Question 7</h3>
+                <fieldset>
+                    <div class="fieldset-content">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Survey ID:</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" disabled placeholder="BET02664PKJ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question Audio File:
+                                    </label>
+                                    <div class="form-holder">
+                                        <select name="" id="audio" class="form-control">
+                                            <option value="Audio" class="option">Audio 1</option>
+                                            <option value="Audio" class="option">Audio 2</option>
+                                            <option value="Audio" class="option">Audio 3</option>
+                                        </select>
+                                        <i class="zmdi zmdi-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">
+                                        Question (Prompt):
+                                    </label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age is under/over 30">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group" style="margin-bottom: 38px">
+                                    <label for="">Question Label (eg."3-1"):</label>
+                                    <div class="form-holder">
+                                        <input type="text" class="form-control" placeholder="Age">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <ul class="keypad">
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad01" type="checkbox" name="" value="1"  class="">
+                                                    <label for="keypad01">
+                                                        <p>Under 30</p>
+                                                        <div class="form-holder2">
+                                                            <select name="" id="question" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad02" type="checkbox" name="" value="2"  class="">
+                                                    <label for="keypad02">
+                                                        <strong>2</strong>
+                                                        <p>30 and over</p>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad03" type="checkbox" name="" value="3"  class="">
+                                                    <label for="keypad03">
+                                                        <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                    </label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad04" type="checkbox" name="" value="4"  class="">
+                                                    <label for="keypad04"><strong>4</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad05" type="checkbox" name="" value="5"  class="">
+                                                    <label for="keypad05"><strong>5</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad06" type="checkbox" name="" value="6"  class="">
+                                                    <label for="keypad06"><strong>6</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad07" type="checkbox" name="" value="7"  class="">
+                                                    <label for="keypad07"><strong>1</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad08" type="checkbox" name="" value="8"  class="">
+                                                    <label for="keypad08"><strong>8</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="">
+                                                <div class="item">
+                                                    <input id="keypad09" type="checkbox" name="" value="9"  class="">
+                                                    <label for="keypad09"><strong>9</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="keypad00" type="checkbox" name="" value="0"  class="">
+                                                    <label for="keypad00"><strong>0</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="keypad011" type="checkbox" name="" value="11"  class="">
+                                                    <label for="keypad011"><strong>*</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="" class="selected">
+                                                <div class="item">
+                                                    <input id="keypad012" type="checkbox" name="" value="12"  class="">
+                                                    <label for="keypad012"><strong>#</strong></label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Survey Preview</h3>
+                <fieldset>
+                    <div class="fieldset-content">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="table-responsive white-bg">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>Survey ID</td>
+                                                <td>Survey short name</td>
+                                                <td colspan="3">Survey short name</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AkR08c001</td>
+                                                <td>Example</td>
+                                                <td colspan="3">With out skip logic</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Survey ID</td>
+                                                <td>Number of Questions</td>
+                                                <td>Survey Response goal</td>
+                                                <td colspan="2">Audio Volume</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AkR08c001</td>
+                                                <td>2</td>
+                                                <td>0</td>
+                                                <td colspan="2">0.25</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Survey Created</td>
+                                                <td>Survey Start Date</td>
+                                                <td>Survey End Date</td>
+                                                <td colspan="2">Survey Start-End Date</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2019-05-16</td>
+                                                <td>2019-05-29</td>
+                                                <td>2019-05-29</td>
+                                                <td colspan="2">08:00-20:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Use Survey Skip Logic?</td>
+                                                <td>Enable AMD?</td>
+                                                <td>Timeout</td>
+                                                <td>Channels</td>
+                                                <td>Trunk</td>
+                                            </tr>
+                                            <tr>
+                                                <td>No</td>
+                                                <td>No</td>
+                                                <td>30</td>
+                                                <td>75</td>
+                                                <td>7545681@ddps2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Response Tracking Question</td>
+                                                <td>Intro Audio File</td>
+                                                <td colspan="3">Hangup Audio File</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>start.wav</td>
+                                                <td colspan="3">end.wav</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">Question (Prompt)</td>
+                                                <td>Question Audio File</td>
+                                                <td colspan="2">Question Label</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="widget">
+                                                        <table class="table table-striped table-bordered">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="2" class="gray-bg">1. One</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF 1</td>
+                                                                    <td>=> a</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF 2</td>
+                                                                    <td>=> b</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF 3</td>
+                                                                    <td>=> c</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF 4</td>
+                                                                    <td>=> d</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF 5</td>
+                                                                    <td>=> r</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF 6</td>
+                                                                    <td>=> f</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF 7</td>
+                                                                    <td>=> g</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF 8</td>
+                                                                    <td>=> h</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF 9</td>
+                                                                    <td>=> i</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF *</td>
+                                                                    <td>=> j</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF 0</td>
+                                                                    <td>=> k</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DTMF #</td>
+                                                                    <td>=> l</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                                <td>start.wav</td>
+                                                <td colspan="2">1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<!-- JS -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/additional-methods.min.js"></script>
+<script src="js/jquery.steps.min.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/wNumb.js"></script>
+<script src="js/main.js"></script>
+
+<script src="js/trunk_chan.js"></script>
+<script src="js/timeout.js"></script>
+
+<!------slider pips------>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+<!-- date-picker -->
+<script src="js/datepicker.js"></script>
+<script src="js/datepicker.en.js"></script>
+
+<!------time picker------>
+<link rel="stylesheet" type="text/css" href="css/jquery-clockpicker.min.css">
+<script type="text/javascript" src="js/jquery-clockpicker.min.js"></script>
+<script>
+    $(function() {
+        var inputa = $('#input-a');
+        inputa.clockpicker({
+            autoclose: true
+        });
+        $('.clockpicker').clockpicker();
+// Manual operations
+        $('#button-a').click(function(e){
+            // Have to stop propagation here
+            e.stopPropagation();
+            inputa.clockpicker('show')
+                .clockpicker('toggleView', 'minutes');
+        });
+        $('#button-b').click(function(e){
+            // Have to stop propagation here
+            e.stopPropagation();
+            inputa.clockpicker('show')
+                .clockpicker('toggleView', 'hours');
+        });
+
+        var inputx = $('#input-x');
+        inputx.clockpicker({
+            autoclose: true
+        });
+        $('.clockpicker').clockpicker();
+// Manual operations
+        $('#button-x').click(function(e){
+            // Have to stop propagation here
+            e.stopPropagation();
+            inputx.clockpicker('show')
+                .clockpicker('toggleView', 'minutes');
+        });
+        $('#button-y').click(function(e){
+            // Have to stop propagation here
+            e.stopPropagation();
+            inputx.clockpicker('show')
+                .clockpicker('toggleView', 'hours');
+        });
+    });
+</script>
+
+<!------ quantity plus minus ----->
+<script src="js/quantity-bt.js"></script>
+
+<!------slider pips------>
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/slider-pips.js"></script>
+
+<!------radio slider------>
+<script src="js/jquery.radios-to-slider.js"></script>
+
+    <!------dropzone------>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+<script>
+    Dropzone.autoDiscover = false;
+    $(document).ready(function() {
+        $("#radios").radiosToSlider();
+        $("#radios2").radiosToSlider();
+        $("#radios3").radiosToSlider();
+        $("div#mydropzone").dropzone({ url: "/file/post" });
+    });
+</script>
+
+
+<!------ timepicker ----->
+<link rel="stylesheet" href="css/jquery.timepicker.min.css">
+<script src="js/jquery.timepicker.min.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+        $('.ui-slider-handle').css('left','10%')
+        $("#keypad1").click(function(){
+            $(".form-holder2,.text").toggle();
+        });
+        $("#keypad2").click(function(){
+            $(".text2").toggle();
+        });
+        $("#keypad3").click(function(){
+            $(".editable").toggle();
+        });
+
+
+        $('#trunk_id').on('change', function() {
+            // console.log('udhwuieq');
+             var test= $('#trunk_id').val()
+            $('.ui-slider-handle').css('left',test+'%')
+        });
+
+        $(".timeout").click(function(){
+            var timeoutVal = $("input[name='options']:checked").val();
+            var rings = (timeoutVal/5)-1;
+            $('#timeoutLable').html(timeoutVal+' Sec(' +rings+ ' Rings )' )
+            console.log(timeoutVal)
+
+        });
+
+
+
+    });
+</script>
+
+</body>
+</html>
