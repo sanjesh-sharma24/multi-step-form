@@ -106,16 +106,11 @@
                                     <label for="trunk_id">Trunk:</label>
                                     <div class="form-group">
                                         <select name="" id="trunk_id" class="form-control">
-                                            <option value="10" class="option">Trunk 1</option>
-                                            <option value="20" class="option">Trunk 2</option>
-                                            <option value="30" class="option">Trunk 3</option>
-                                            <option value="40" class="option">Trunk 4</option>
-                                            <option value="50" class="option">Trunk 5</option>
-                                            <option value="60" class="option">Trunk 6</option>
-                                            <option value="70" class="option">Trunk 7</option>
-                                            <option value="80" class="option">Trunk 8</option>
-                                            <option value="90" class="option">Trunk 9</option>
-                                            <option value="100" class="option">Trunk 10</option>
+                                            <option value="10" class="option">Trunk 10</option>
+                                            <option value="20" class="option">Trunk 20</option>
+                                            <option value="30" class="option">Trunk 30</option>
+                                            <option value="40" class="option">Trunk 40</option>
+                                            <option value="50" class="option">Trunk 50</option>
                                         </select>
                                         <i class="zmdi zmdi-caret-down"></i>
                                     </div>
@@ -123,11 +118,8 @@
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <label for="">Use Survey Skip Logic:</label>
-                                    <label for="switch1">
-                                        <input type="checkbox" id="switch1" checked switch="none" />
-                                        <span class="c-switch-label" data-on-label="Yes" data-off-label="No"></span>
-                                    </label>
+                                    <label for="">Channels</label>
+                                    <div class="slider channels"></div>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12">
@@ -136,6 +128,15 @@
                                     <label for="switch2">
                                         <input type="checkbox" id="switch2" checked switch="none" />
                                         <span class="c-switch-label" data-on-label="No" data-off-label="Yes"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="">Use Survey Skip Logic:</label>
+                                    <label for="switch1">
+                                        <input type="checkbox" id="switch1" checked switch="none" />
+                                        <span class="c-switch-label" data-on-label="Yes" data-off-label="No"></span>
                                     </label>
                                 </div>
                             </div>
@@ -158,13 +159,6 @@
                                         <input id="option5" name="options" value="50" type="radio">
                                         <label for="option5">50</label>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label for="">Channels</label>
-                                    <div class="slider channels"></div>
-                                    <!--<div class="slider2"></div>-->
                                 </div>
                             </div>
                             <div class="col-md-12 col-xs-12">
@@ -1650,8 +1644,8 @@
 <!------radio slider------>
 <script src="js/jquery.radios-to-slider.js"></script>
 
-    <!------dropzone------>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+<!------dropzone------>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
 <script>
     Dropzone.autoDiscover = false;
     $(document).ready(function() {
@@ -1681,23 +1675,23 @@
             $(".editable").toggle();
         });
 
-
+        /*---- channels ---*/
         $('#trunk_id').on('change', function() {
-            // console.log('udhwuieq');
              var test= $('#trunk_id').val()
-            $('.ui-slider-handle').css('left',test+'%')
+            var points = test;
+             $('.slider').slider({min:0,max:points,animate:true, value:3});
+             $('.slider').slider('pips');
+            // $('.ui-slider-handle').css('left',test+'%')
         });
 
+        /*---- timeout rings ---*/
         $(".timeout").click(function(){
             var timeoutVal = $("input[name='options']:checked").val();
             var rings = (timeoutVal/5)-1;
-            $('#timeoutLable').html(timeoutVal+' Sec(' +rings+ ' Rings )' )
+            $('#timeoutLable').html(timeoutVal+' Sec (' +rings+ ' Rings )' )
             console.log(timeoutVal)
 
         });
-
-
-
     });
 </script>
 

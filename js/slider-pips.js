@@ -62,7 +62,6 @@ var points = 10;
 
         }
 
-
     };
 
     $.extend(true, $['ui']['slider'].prototype, extensionMethods);
@@ -127,12 +126,8 @@ var points = 10;
 })(jQuery);
 
 
-/* ------------------------- */
-/* demo stuff */
-
+/* ------- demo stuff ------ */
 $(document).ready(function() {
-    $('.slider, .slider2').slider({min:0,max:points,animate:true, value:3});
-    $('.slider3').slider({min:0,max:points,animate:true,range:true, values:[2,18]});
+    $('.slider').slider({min:0,max:points,animate:true, value:3});
     $('.slider').slider('pips');
-    $('.slider2').slider('pips', {rest:'number'});
 });
