@@ -56,7 +56,9 @@ textarea {
   -o-appearance: unset !important;
   -ms-appearance: unset !important;
 }
-
+input:disabled {
+  background-color: rgb(234, 234, 234);
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   appearance: none !important;
@@ -388,7 +390,7 @@ select {
 }
 .actions ul {
   padding-left: 45px;
-  padding-right: 55px;
+  padding-right: 30px;
 }
 .actions ul .disabled {
   display: none;
@@ -1888,7 +1890,7 @@ input[switch]:checked + .c-switch-label:after {
 
 /*----- ui slider pips -----*/
 .ui-slider-horizontal.ui-slider-pips {
-  margin-bottom: 2em;
+  margin-bottom: 2.5em;
   margin-top: 0.8em;
 }
 .ui-slider-pips .ui-slider-number,
