@@ -40,7 +40,7 @@ jQuery(document).ready(function(){
 $(document).ready(function() {
     $('.minus').click(function () {
         var $input = $(this).parent().find('input');
-        var count = parseInt($input.val()) - 1;
+        var count = parseInt($input.val()) - 25;
         count = count < 1 ? 25 : count;
         $input.val(count);
         $input.change();
