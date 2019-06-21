@@ -34,3 +34,22 @@ jQuery(document).ready(function(){
         }
     });
 });
+
+
+/*------goal plus minus------*/
+$(document).ready(function() {
+    $('.minus').click(function () {
+        var $input = $(this).parent().find('input');
+        var count = parseInt($input.val()) - 1;
+        count = count < 1 ? 25 : count;
+        $input.val(count);
+        $input.change();
+        return false;
+    });
+    $('.plus').click(function () {
+        var $input = $(this).parent().find('input');
+        $input.val(parseInt($input.val()) + 25);
+        $input.change();
+        return false;
+    });
+});

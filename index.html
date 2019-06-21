@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="css/datepicker.min.css">
 <link rel="stylesheet" href="css/radios-to-slider.css">
 <link rel="stylesheet" href="css/dropzone.css">
+    <script src="js/slider-pips.js"></script>
 
 
 </head>
@@ -80,8 +81,10 @@
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <label for="">Survey Response Goal:</label>
-                                    <div class="form-holder">
-                                        <input type="text" class="form-control datepicker-here" data-language='en' data-date-format="yyyy - mm - dd" id="dp4">
+                                    <div class="number">
+                                        <span class="minus">-</span>
+                                        <input type="text" value="0"/>
+                                        <span class="plus">+</span>
                                     </div>
                                 </div>
                             </div>
@@ -142,22 +145,19 @@
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <label for="" >Timeout: <span id="timeoutLable">30 Sec (5 Rings)</span></label>
+                                    <label for="" >Timeout: <span id="timeoutLable">0 Sec (0 Rings)</span></label>
                                     <div id="radios" class="timeout">
-                                        <input id="option1" name="options" value="30" type="radio">
+                                        <input id="option1" name="options" value="3" type="radio">
                                         <label for="option1">30</label>
 
-                                        <input id="option2" name="options" value="35" type="radio" checked>
-                                        <label for="option2">35</label>
+                                        <input id="option2" name="options" value="6" type="radio" checked>
+                                        <label for="option2">45</label>
 
-                                        <input id="option3" name="options" value="40" type="radio">
-                                        <label for="option3">40</label>
+                                        <input id="option3" name="options" value="9" type="radio">
+                                        <label for="option3">60</label>
 
-                                        <input id="option4" name="options" value="45" type="radio">
-                                        <label for="option4">45</label>
-
-                                        <input id="option5" name="options" value="50" type="radio">
-                                        <label for="option5">50</label>
+                                        <input id="option4" name="options" value="12" type="radio">
+                                        <label for="option4">90</label>
                                     </div>
                                 </div>
                             </div>
@@ -166,39 +166,36 @@
                                     <label for="">Audio Volume 25%</label>
                                     <div id="radios3">
                                         <input id="option1" name="options" type="radio">
-                                        <label for="option1">1</label>
+                                        <label for="option1">0</label>
 
                                         <input id="option2" name="options" type="radio" checked>
-                                        <label for="option2">10</label>
+                                        <label for="option2">25</label>
 
                                         <input id="option3" name="options" type="radio">
-                                        <label for="option3">20</label>
+                                        <label for="option3">50</label>
 
                                         <input id="option4" name="options" type="radio">
-                                        <label for="option4">30</label>
+                                        <label for="option4">75</label>
 
                                         <input id="option5" name="options" type="radio">
-                                        <label for="option5">40</label>
+                                        <label for="option5">100</label>
 
                                         <input id="option6" name="options" type="radio">
-                                        <label for="option6">50</label>
+                                        <label for="option6">125</label>
 
                                         <input id="option7" name="options" type="radio">
-                                        <label for="option7">60</label>
+                                        <label for="option7">150</label>
 
                                         <input id="option8" name="options" type="radio">
-                                        <label for="option8">70</label>
+                                        <label for="option8">175</label>
 
                                         <input id="option9" name="options" type="radio">
-                                        <label for="option9">80</label>
-
-                                        <input id="option10" name="options" type="radio">
-                                        <label for="option10">90</label>
-
-                                        <input id="option11" name="options" type="radio">
-                                        <label for="option11">100</label>
+                                        <label for="option9">200</label>
                                     </div>
                                 </div>
+                                <!--<div class="form-group">-->
+                                    <!--<div id="slider"></div>-->
+                                <!--</div>-->
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -222,9 +219,9 @@
                                     <label for="">Response Tracking Question:</label>
                                     <div class="form-group">
                                         <select name="" id="tracking-question" class="form-control">
-                                            <option value="united states" class="option">Question 1</option>
+                                            <option value="united states" class="option">Question 3</option>
                                             <option value="united kingdom" class="option">Question 2</option>
-                                            <option value="viet nam" class="option">Question 3</option>
+                                            <option value="viet nam" class="option">Question 1</option>
                                         </select>
                                         <i class="zmdi zmdi-caret-down"></i>
                                     </div>
@@ -245,7 +242,7 @@
                             </div>
                             <div class="com-md-12 col-xs-12">
                                 <div class="form-group" style="margin-bottom: 3.4vh">
-                                    <label for="">Hangup Audio File:</label>
+                                    <label for="">Bulk Upload:</label>
                                     <div class="dropzone" id="mydropzone"></div>
                                 </div>
                             </div>
@@ -310,7 +307,7 @@
                                                             <strong>1</strong>
                                                         </div>
                                                         <div class="text">
-                                                            <p>Under 30</p>
+                                                            <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
                                                         </div>
                                                         <div class="form-holder2">
                                                             <select name="" id="question" class="form-control2">
@@ -331,7 +328,15 @@
                                                     <label for="keypad2">
                                                         <strong>2</strong>
                                                         <div class="text2">
-                                                            <p>30 and over</p>
+                                                            <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        </div>
+                                                        <div class="form-holder3">
+                                                            <select name="" id="question2" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
                                                         </div>
                                                     </label>
                                                 </div>
@@ -343,7 +348,17 @@
                                                     <input id="keypad3" type="checkbox" name="" value="3" checked  class="">
                                                     <label for="keypad3">
                                                         <strong>3</strong>
-                                                        <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        <div class="text3">
+                                                            <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        </div>
+                                                        <div class="form-holder4">
+                                                            <select name="" id="question2" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
                                                     </label>
                                                 </div>
                                             </a>
@@ -352,7 +367,20 @@
                                             <a href="#" onclick="" class="">
                                                 <div class="item">
                                                     <input id="keypad4" type="checkbox" name="" value="4"  class="">
-                                                    <label for="keypad4"><strong>4</strong></label>
+                                                    <label for="keypad4">
+                                                        <strong>4</strong>
+                                                        <div class="text4">
+                                                            <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        </div>
+                                                        <div class="form-holder5">
+                                                            <select name="" id="question2" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
                                                 </div>
                                             </a>
                                         </li>
@@ -360,7 +388,20 @@
                                             <a href="#" onclick="" class="">
                                                 <div class="item">
                                                     <input id="keypad5" type="checkbox" name="" value="5"  class="">
-                                                    <label for="keypad5"><strong>5</strong></label>
+                                                    <label for="keypad5">
+                                                        <strong>5</strong>
+                                                        <div class="text5">
+                                                            <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        </div>
+                                                        <div class="form-holder6">
+                                                            <select name="" id="question2" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
                                                 </div>
                                             </a>
                                         </li>
@@ -368,7 +409,20 @@
                                             <a href="#" onclick="" class="">
                                                 <div class="item">
                                                     <input id="keypad6" type="checkbox" name="" value="6"  class="">
-                                                    <label for="keypad6"><strong>6</strong></label>
+                                                    <label for="keypad6">
+                                                        <strong>6</strong>
+                                                        <div class="text6">
+                                                            <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        </div>
+                                                        <div class="form-holder7">
+                                                            <select name="" id="question2" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
                                                 </div>
                                             </a>
                                         </li>
@@ -376,7 +430,20 @@
                                             <a href="#" onclick="" class="">
                                                 <div class="item">
                                                     <input id="keypad7" type="checkbox" name="" value="7"  class="">
-                                                    <label for="keypad7"><strong>1</strong></label>
+                                                    <label for="keypad7">
+                                                        <strong>1</strong>
+                                                        <div class="text7">
+                                                            <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        </div>
+                                                        <div class="form-holder8">
+                                                            <select name="" id="question2" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
                                                 </div>
                                             </a>
                                         </li>
@@ -384,7 +451,20 @@
                                             <a href="#" onclick="" class="">
                                                 <div class="item">
                                                     <input id="keypad8" type="checkbox" name="" value="8"  class="">
-                                                    <label for="keypad8"><strong>8</strong></label>
+                                                    <label for="keypad8">
+                                                        <strong>8</strong>
+                                                        <div class="text8">
+                                                            <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        </div>
+                                                        <div class="form-holder9">
+                                                            <select name="" id="question2" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
                                                 </div>
                                             </a>
                                         </li>
@@ -392,7 +472,20 @@
                                             <a href="#" onclick="" class="">
                                                 <div class="item">
                                                     <input id="keypad9" type="checkbox" name="" value="9"  class="">
-                                                    <label for="keypad9"><strong>9</strong></label>
+                                                    <label for="keypad9">
+                                                        <strong>9</strong>
+                                                        <div class="text9">
+                                                            <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        </div>
+                                                        <div class="form-holder0">
+                                                            <select name="" id="question2" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
+                                                    </label>
                                                 </div>
                                             </a>
                                         </li>
@@ -480,7 +573,7 @@
                                                 <div class="item">
                                                     <input id="step1" type="checkbox" name="" value="1"  class="">
                                                     <label for="step1">
-                                                        <p>Under 30</p>
+                                                        <strong>1</strong>
                                                         <div class="form-holder2">
                                                             <select name="" id="question" class="form-control2">
                                                                 <option value="question" class="option">go to question 5</option>
@@ -496,10 +589,20 @@
                                         <li>
                                             <a href="#" onclick="" class="">
                                                 <div class="item">
-                                                    <input id="step2" type="checkbox" name="" value="2"  class="">
-                                                    <label for="step2">
+                                                    <input id="keypad2" type="checkbox" name="" value="2" checked  class="">
+                                                    <label for="keypad2">
                                                         <strong>2</strong>
-                                                        <p>30 and over</p>
+                                                        <div class="text2">
+                                                            <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        </div>
+                                                        <div class="form-holder3">
+                                                            <select name="" id="question2" class="form-control2">
+                                                                <option value="question" class="option">go to question 5</option>
+                                                                <option value="question" class="option">go to question 4</option>
+                                                                <option value="question" class="option">go to question 3</option>
+                                                            </select>
+                                                            <i class="zmdi zmdi-caret-down"></i>
+                                                        </div>
                                                     </label>
                                                 </div>
                                             </a>
@@ -509,7 +612,7 @@
                                                 <div class="item">
                                                     <input id="step3" type="checkbox" name="" value="3"  class="">
                                                     <label for="step3">
-                                                        <div contenteditable="true" data-placeholder="" class="editable">Yes</div>
+                                                        <strong>3</strong>
                                                     </label>
                                                 </div>
                                             </a>
@@ -1579,9 +1682,6 @@
 <script src="js/wNumb.js"></script>
 <script src="js/main.js"></script>
 
-<script src="js/trunk_chan.js"></script>
-<script src="js/timeout.js"></script>
-
 <!------slider pips------>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 
@@ -1664,22 +1764,41 @@
 
 <script>
     $(document).ready(function(){
-        $('.ui-slider-handle').css('left','10%')
+        $('.ui-slider-handle').css('left','100%')
+
         $("#keypad1").click(function(){
             $(".form-holder2,.text").toggle();
         });
         $("#keypad2").click(function(){
-            $(".text2").toggle();
+            $(".form-holder3,.text2").toggle();
         });
         $("#keypad3").click(function(){
-            $(".editable").toggle();
+            $(".form-holder4,.text3").toggle();
+        });
+        $("#keypad4").click(function(){
+            $(".form-holder5,.text4").toggle();
+        });
+        $("#keypad5").click(function(){
+            $(".form-holder6,.text5").toggle();
+        });
+        $("#keypad6").click(function(){
+            $(".form-holder7,.text6").toggle();
+        });
+        $("#keypad7").click(function(){
+            $(".form-holder8,.text7").toggle();
+        });
+        $("#keypad8").click(function(){
+            $(".form-holder9,.text8").toggle();
+        });
+        $("#keypad9").click(function(){
+            $(".form-holder0,.text9").toggle();
         });
 
         /*---- channels ---*/
         $('#trunk_id').on('change', function() {
              var test= $('#trunk_id').val()
             var points = test;
-             $('.slider').slider({min:0,max:points,animate:true, value:3});
+             $('.slider').slider({min:0,max:points,animate:true, value:50});
              $('.slider').slider('pips');
             // $('.ui-slider-handle').css('left',test+'%')
         });
@@ -1687,11 +1806,35 @@
         /*---- timeout rings ---*/
         $(".timeout").click(function(){
             var timeoutVal = $("input[name='options']:checked").val();
-            var rings = (timeoutVal/5)-1;
+            var rings = (timeoutVal/3);
             $('#timeoutLable').html(timeoutVal+' Sec (' +rings+ ' Rings )' )
             console.log(timeoutVal)
 
         });
+    });
+</script>
+
+<!--<link rel="stylesheet" href="css/nouislider.min.css">-->
+<!--<script  src="js/nouislider.min.js"></script>-->
+<script>
+    var slider = document.getElementById('slider');
+    noUiSlider.create(slider, {
+        start: [5],
+        step: 1,
+        range: {
+            min: [0],
+            max: [10]
+        },
+        pips: { // Show a scale with the slider
+            mode: 'values',
+            stepped: true,
+            density: 3,
+            values: [30,45,60,90]
+        },
+    });
+
+    slider.noUiSlider.on('hover', function( value ){
+        console.log(value);
     });
 </script>
 
